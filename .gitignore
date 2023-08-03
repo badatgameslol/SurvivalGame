@@ -74,5 +74,15 @@ Plugins/*/Intermediate/*
 DerivedDataCache/*
 
 #Custom Directories
-Content/*
+!Content/
 !Content/Blueprints*
+Content/Animations*
+Content/Audio*
+Content/Developers*
+Content/LandscapeMountains*
+Content/Marketplace*
+Content/Meshes*
+Content/Particles*
+Content/StarterContent*
+Content/VehicleVarietyPack*
+
