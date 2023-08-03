@@ -87,4 +87,5 @@ Content/StarterContent*
 Plugins/*
 
 SurvivalGame.uproject
+*SurvivalGame.uproject
 *.uproject
