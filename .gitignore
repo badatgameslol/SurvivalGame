@@ -75,7 +75,6 @@ DerivedDataCache/*
 
 #Custom Directories
 !Content/
-!Content/Blueprints*
 Content/Animations*
 Content/Audio*
 Content/Developers*
