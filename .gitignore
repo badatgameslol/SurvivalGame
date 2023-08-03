@@ -76,12 +76,12 @@ DerivedDataCache/*
 #Custom Directories
 !Content/
 #Content/Animations*
-Content/Audio*
+#Content/Audio*
 Content/Developers*
 Content/LandscapeMountains*
 Content/Marketplace*
-Content/Meshes*
-Content/Particles*
+#Content/Meshes*
+#Content/Particles*
 Content/StarterContent*
 Content/VehicleVarietyPack*
 Plugins/*
