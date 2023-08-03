@@ -83,6 +83,6 @@ Content/Marketplace*
 #Content/Meshes*
 #Content/Particles*
 Content/StarterContent*
-Content/VehicleVarietyPack*
+#Content/VehicleVarietyPack*
 Plugins/*
 
