@@ -75,7 +75,7 @@ DerivedDataCache/*
 
 #Custom Directories
 !Content/
-Content/Animations*
+#Content/Animations*
 Content/Audio*
 Content/Developers*
 Content/LandscapeMountains*
