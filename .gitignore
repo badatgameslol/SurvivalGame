@@ -86,5 +86,5 @@ Content/StarterContent*
 #Content/VehicleVarietyPack*
 Plugins/*
 
-SurvivalGame.uproject
-SurvivalGame/SurvivalGame.uproject
+#SurvivalGame.uproject
+#SurvivalGame/SurvivalGame.uproject
