@@ -529,7 +529,6 @@ void ASurvivalCharacter::MulticastPlayMeleeFX_Implementation()
 	}
 }
 
-
 void ASurvivalCharacter::ServerProcessMeleeHit_Implementation(const FHitResult& MeleeHit)
 {
 
@@ -544,6 +543,7 @@ bool ASurvivalCharacter::ServerProcessMeleeHit_Validate(const FHitResult& MeleeH
 	{
 		return true;
 	}
+	return false;
 }
 
 void ASurvivalCharacter::Suicide(struct FDamageEvent const& DamageEvent, const AActor* DamageCauser)
