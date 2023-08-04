@@ -275,7 +275,7 @@ protected:
 
 	void BeginMeleeAttack();
 
-	UFUNCTION(Server, Reliable)
+	UFUNCTION(Server, Reliable, WithValidation)
 	void ServerProcessMeleeHit(const FHitResult& MeleeHit);
 
 	UFUNCTION(NetMulticast, Unreliable)

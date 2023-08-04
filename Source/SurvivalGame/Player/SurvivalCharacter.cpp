@@ -532,13 +532,18 @@ void ASurvivalCharacter::MulticastPlayMeleeFX_Implementation()
 
 void ASurvivalCharacter::ServerProcessMeleeHit_Implementation(const FHitResult& MeleeHit)
 {
+
+	MulticastPlayMeleeFX();
+	UGameplayStatics::ApplyPointDamage(MeleeHit.GetActor(), MeleeAttackDamage, (MeleeHit.TraceStart - MeleeHit.TraceEnd).GetSafeNormal(), MeleeHit, GetController(), this, UMeleeDamage::StaticClass());
+	LastMeleeAttackTime = GetWorld()->GetTimeSeconds();
+}
+
+bool ASurvivalCharacter::ServerProcessMeleeHit_Validate(const FHitResult& MeleeHit)
+{
 	if (GetWorld()->TimeSince(LastMeleeAttackTime) > MeleeAttackMontage->GetPlayLength() && (GetActorLocation() - MeleeHit.ImpactPoint).Size() <= MeleeAttackDistance)
 	{
-		MulticastPlayMeleeFX();
-
-		UGameplayStatics::ApplyPointDamage(MeleeHit.GetActor(), MeleeAttackDamage, (MeleeHit.TraceStart - MeleeHit.TraceEnd).GetSafeNormal(), MeleeHit, GetController(), this, UMeleeDamage::StaticClass());
+		return true;
 	}
-	LastMeleeAttackTime = GetWorld()->GetTimeSeconds();
 }
 
 void ASurvivalCharacter::Suicide(struct FDamageEvent const& DamageEvent, const AActor* DamageCauser)
