@@ -26,7 +26,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Instanced)
 	class UItem* ItemTemplate;
 
-
+	//Called when a player takes the pickup
+	//Moved from protected to puclic to call in character class
+	UFUNCTION()
+	void OnTakePickup(class ASurvivalCharacter* Taker);
 protected:
 
 	//The item that will be added to the inventory when this pickup is taken
@@ -49,9 +52,9 @@ protected:
 	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
 #endif 
 
-	//Called when a player takes the pickup
-	UFUNCTION()
-	void OnTakePickup(class ASurvivalCharacter* Taker);
+	////Called when a player takes the pickup
+	//UFUNCTION()
+	//void OnTakePickup(class ASurvivalCharacter* Taker);
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Components")
 	class UStaticMeshComponent* PickupMesh;

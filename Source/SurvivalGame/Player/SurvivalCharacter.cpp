@@ -1127,4 +1127,17 @@ void ASurvivalCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 	PlayerInputComponent->BindAxis("MoveRight", this, &ASurvivalCharacter::MoveRight);
 }
 
+void ASurvivalCharacter::TryPickupItem(APickup* ItemToPickup)
+{
+	if (ItemToPickup != nullptr)
+	{
+		ServerPickupItem(ItemToPickup);
+	}
+}
+
+void ASurvivalCharacter::ServerPickupItem_Implementation(APickup* ItemToPickup)
+{
+	ItemToPickup->OnTakePickup(this);
+}
+
 #undef LOCTEXT_NAMESPACE

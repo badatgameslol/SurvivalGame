@@ -367,4 +367,13 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Weapons")
 	FORCEINLINE bool IsAiming() const { return bIsAiming; }
 
+
+	public:
+	/*In case if we are picking an item using the UI**/
+	UFUNCTION(BlueprintCallable)
+	void TryPickupItem(APickup* ItemToPickup);
+
+	UFUNCTION(Server, Reliable)
+	void ServerPickupItem(APickup* ItemToPickup);
+
 };

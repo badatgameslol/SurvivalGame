@@ -18,4 +18,8 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, Category = "Inventory Item Widget", meta = (ExposeOnSpawn = true))
 		class UItem* Item;
+
+	/**Used to access the pickup actor in the UI, which is belongs from the UItem, so we can destroy the pickup actor in level while on dragged if we pick it up using UI */
+	UPROPERTY(BlueprintReadOnly, Category = "Inventory Item Widget", meta = (ExposeOnSpawn = true))
+		class APickup* PickupActor;
 };
